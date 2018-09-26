@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>Spring Ajax Login Demo</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+   
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Validify Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	 <!-- <link rel="stylesheet" type="text/css" media="all" href="css/style.css" /> -->
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- title -->
+	<h1>
+		<!-- <span>V</span>alidify
+		<span>L</span>ogin -->
+		<span>
+			<img src="" alt="SOME LOGO HERE" />
+		</span>
+	</h1>
+	<!-- //title -->
+	<!-- content -->
+	<div class="sub-main-w3">
+		<form id="demo" novalidate name="f" th:action="@{/login}" method="post">
+			
+			<h2>Login Your Account</h2>
+			<div class="form-group">
+				<input type="text" class="form-control textbox" id="username" name="username" placeholder="E-mail" required="">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control textbox" id="password" name="password" placeholder="Password" required="">
+			</div>
+			<div class="form-group-2">
+				<button class="btn btn-default btn-lg" type="submit">
+					<i class="fas fa-long-arrow-alt-right"></i>
+				</button>
+			</div>
+			<div th:if="${param.error}" class="alert alert-success">Invalid username and password.</div>
+            <div th:if="${param.logout}" class="alert alert-success">You have been logged out.</div>
+			<div class="alert alert-success hidden" role="alert">You Have Successfully Logged In</div>
+		</form>
+		<!-- //switch -->
+	</div>
+	<!-- //content -->
+
+	<!-- copyright -->
+	<!-- <div class="footer">
+		<p>&copy; 2018 Validify Login Form. All rights reserved | Design by
+			<a href="http://w3layouts.com">W3layouts</a>
+		</p>
+	</div> -->
+	<!-- //copyright -->
+
+	<!-- Jquery -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //Jquery -->
+	<!-- validify plugin -->
+	<script src="js/validify.jss"></script>
+	<script>
+		/* $("#demo").validify({
+			onSubmit: function (e, $this) {
+				$.ajax({
+					url: "[[@{/login}]]",
+					contentType: "application/json",
+					dataType: "json",
+					success: function( data ) {
+						//$('#ip').html(location.ip);
+						//$('#state').html(location.time_zone);
+						$this.find('.alert').removeClass('hidden')
+					}
+				});
+				$this.find('.alert').removeClass('hidden')
+			},
+			onFormSuccess: function (form) {
+				
+				console.log("Form is valid now!")
+			},
+			onFormFail: function (form) {
+				console.log("Form is not valid :(")
+			}
+		}); */
+		/* $("#demo").validify({
+			errorStyle: "validifyError",
+			successStyle: "validifySuccess",
+			emailFieldName: "email",
+			emailCheck: true,
+			requiredAttr: "required",
+		}); */
+	</script>
+	<!-- //validify plugin -->
+
+</body>
+
+</html>
